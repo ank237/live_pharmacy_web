@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "454405923694",
+    "firebase_url": "https://live-project-c6320.firebaseio.com",
+    "project_id": "live-project-c6320",
+    "storage_bucket": "live-project-c6320.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:454405923694:android:784123a9f5d472bdc7d77f",
+        "android_client_info": {
+          "package_name": "com.battlerooms.live_pharmacy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "454405923694-o295j5rlkmd9euvv59umpd12tejss6b7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.battlerooms.live_pharmacy",
+            "certificate_hash": "b8d259dc8695ebd598a4f153b7a874d8362973e4"
+          }
+        },
+        {
+          "client_id": "454405923694-j6le9usja8nsvt7kbve55pap7467t7du.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-EbqzwIjxZTz2a2CIf5NPsekpqjTykMU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "454405923694-j6le9usja8nsvt7kbve55pap7467t7du.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
