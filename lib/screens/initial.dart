@@ -162,6 +162,8 @@ class _InitialScreenState extends State<InitialScreen> {
                   child: Text('DELIVERY AGENT', style: kLargeWhiteTextStyle),
                 ),
               ),
+              SizedBox(height: 15),
+              Text('Version : 5.0.0', style: kLargeBlueTextStyle),
             ],
           ),
         ),

@@ -123,11 +123,11 @@ class OrderProvider extends ChangeNotifier {
       'order_created_date': newOrder.orderCreatedDate,
 
     });
-    await _db.collection('customers'+' '+Stores.dropdownValue).doc(newOrder.phoneNumber).update({
+    await _db.collection('customers'+' '+Stores.dropdownValue).doc(newOrder.phoneNumber).set({
       'name': newOrder.name,
       'address': newOrder.address,
       'phone': newOrder.phoneNumber,
-    });
+    },SetOptions(merge: true));
     toggleIsLoading();
     notifyListeners();
   }

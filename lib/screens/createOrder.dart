@@ -224,29 +224,34 @@ class _CreateOrderState extends State<CreateOrder> {
                         ),
                         color: kPrimaryColor,
                         onPressed: () async {
-                          orderProvider.newOrder = OrderModel(
-                            name: _name.value.text,
-                            address: _address.value.text,
-                            phoneNumber: _phoneNumber.value.text,
-                            orderDetails: _orderDetails.value.text,
-                            amount: _billingAmount.value.text,
-                            dues : _duesAmount.value.text,
-                            date: selectedDate,
-                            isRepeating: repeating,
-                            isDelivered: false,
-                            deliveredBy: 'na',
-                            deliveredOn: '',
-                            modeOfPayment: '',
-                            isPaid: false,
-                            orderCreatedDate: DateTime.now(),
-                            orderDocID: '',
-                          );
-                          if (repeating == true) {
-                            await orderProvider.saveNewScheduledOrder();
+                          if (_name.value.text !='' && _address.value.text !='' && _phoneNumber.value.text !='' && _orderDetails.value.text !='' && _billingAmount.value.text !='' && _duesAmount.value.text !='' ) {
+                            orderProvider.newOrder = OrderModel(
+                              name: _name.value.text,
+                              address: _address.value.text,
+                              phoneNumber: _phoneNumber.value.text,
+                              orderDetails: _orderDetails.value.text,
+                              amount: _billingAmount.value.text,
+                              dues: _duesAmount.value.text,
+                              date: selectedDate,
+                              isRepeating: repeating,
+                              isDelivered: false,
+                              deliveredBy: 'na',
+                              deliveredOn: '',
+                              modeOfPayment: '',
+                              isPaid: false,
+                              orderCreatedDate: DateTime.now(),
+                              orderDocID: '',
+                            );
+                            if (repeating == true) {
+                              await orderProvider.saveNewScheduledOrder();
+                            }
+                            await orderProvider.saveNewOrder();
+                            Fluttertoast.showToast(msg: 'Order Created');
+                            Navigator.pushNamed(context, 'home');
                           }
-                          await orderProvider.saveNewOrder();
-                          Fluttertoast.showToast(msg: 'Order Created');
-                          Navigator.pushNamed(context, 'home');
+                          else{
+                            Fluttertoast.showToast(msg: 'Field Missing',gravity: ToastGravity.CENTER, timeInSecForIosWeb: 2);
+                          }
                         },
                         child: Text('SAVE', style: kLargeWhiteTextStyle),
                       ),
